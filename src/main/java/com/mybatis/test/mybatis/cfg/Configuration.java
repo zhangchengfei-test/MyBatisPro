@@ -1,7 +1,6 @@
 package com.mybatis.test.mybatis.cfg;
 
-import com.mybatis.test.mybatis.utils.Mapper;
-
+import java.util.HashMap;
 import java.util.Map;
 
 public class Configuration {
@@ -9,7 +8,7 @@ public class Configuration {
     private String url;
     private String username;
     private String password;
-    private Map<String, Mapper> mapperMap;
+    private Map<String, Mapper> mapperMap = new HashMap<String,Mapper>();;
 
     public String getDriver() {
         return driver;

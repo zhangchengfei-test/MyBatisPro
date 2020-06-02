@@ -1,7 +1,9 @@
 package com.mybatis.test.mybatis.sqlSession;
 
-public class SqlSessionFactory {
-    public SqlSession openSession() {
-        return null;
-    }
+public interface SqlSessionFactory {
+    /**
+     * 用于打开一个新的SqlSession对象
+     * @return
+     */
+    SqlSession openSession();
 }

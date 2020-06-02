@@ -30,12 +30,10 @@ public class TestMybatis {
             for (User user : all) {
                 System.out.println(user);
             }
-
-            //sqlSession.close();
+            sqlSession.close();
             in.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

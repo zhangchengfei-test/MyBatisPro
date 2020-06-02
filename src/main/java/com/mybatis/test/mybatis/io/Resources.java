@@ -1,7 +1,5 @@
 package com.mybatis.test.mybatis.io;
 
-import jdk.internal.loader.Resource;
-
 import java.io.InputStream;
 
 /**

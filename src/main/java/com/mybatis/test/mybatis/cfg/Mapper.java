@@ -1,4 +1,4 @@
-package com.mybatis.test.mybatis.utils;
+package com.mybatis.test.mybatis.cfg;
 
 /**
  * 用于封装执行的SQL语句和结果类型的全限定类名

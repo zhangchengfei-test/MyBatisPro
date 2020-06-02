@@ -1,6 +1,8 @@
 package com.mybatis.test.mybatis.utils;
 
 import com.mybatis.test.mybatis.cfg.Configuration;
+import com.mybatis.test.mybatis.cfg.Mapper;
+import com.mybatis.test.mybatis.io.Resources;
 import org.dom4j.Attribute;
 import org.dom4j.Document;
 import org.dom4j.Element;
@@ -63,11 +65,13 @@ public class XMLConfigBuilder {
                 Attribute resource = listMapper.attribute("resource");
                 //如果不等于null，则是配置文件，如果等于null，则是注解方式
                 if (resource != null){
+                    System.out.println("使用的是配置");
                     String mapperPath = resource.getValue();
-                    Map<String,Mapper> mapperMap = loadMapperConfiguration(mapperPath);
+                    System.out.println(mapperPath);
+                    Map<String, Mapper> mapperMap = loadMapperConfiguration(mapperPath);
                     cfg.setMapperMap(mapperMap);
                 }else {
-
+                    System.out.println("使用的是注解");
                 }
             }
             return cfg;
@@ -91,7 +95,9 @@ public class XMLConfigBuilder {
 
             SAXReader saxReader = new SAXReader();
 
-            Document document = saxReader.read(mapperPath);
+            in = Resources.getResourceAsStream(mapperPath);
+
+            Document document = saxReader.read(in);
 
             Element rootElement = document.getRootElement();
 

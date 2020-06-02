@@ -1,9 +1,16 @@
 package com.mybatis.test.mybatis.sqlSession;
 
-import com.mybatis.test.service.IUserDao;
+public interface SqlSession {
+    /**
+     * 根据参数创建一个代理对象
+     * @param daoInterfaceClass dao的接口字节码
+     * @param <T>
+     * @return
+     */
+    <T> T getMapper(Class<T> daoInterfaceClass);
 
-public class SqlSession {
-    public <T> T getMapper(Class<T> t) {
-        return null;
-    }
+    /**
+     * 释放资源
+     */
+    void close();
 }

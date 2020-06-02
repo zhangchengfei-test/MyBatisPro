@@ -11,6 +11,6 @@ public class SqlSessionFactoryBuilder {
 
         Configuration configuration = XMLConfigBuilder.loadConfiguration(config);
 
-        return null;
+        return new DefaultSqlSessionFactory(configuration);
     }
 }
